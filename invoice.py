@@ -27,5 +27,8 @@ class invoice (osv.osv):
     _defaults = {
         'date': fields.date.context_today,
     }
+
+    def write(self, cr, uid, ids, vals, context=None):
+        raise osv.except_osv(u'Không được phép sửa hóa đơn!', u'Bạn chỉ có thể tạo mới hoặc xóa hóa đơn.')
     
 invoice()

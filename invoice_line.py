@@ -36,8 +36,8 @@ class invoice_line (osv.osv):
             if record.product_id and record.quantity > (record.product_id.stock or 0):
                 # Raise warning with dynamic stock left
                 raise osv.except_osv(
-                    'Hàng trong kho không đủ',
-                    'Còn lại: %d sản phẩm' % (record.product_id.stock or 0)
+                    u'Hàng trong kho không đủ',
+                    u'Còn lại: %d sản phẩm' % (record.product_id.stock or 0)
                 )
         return True
 

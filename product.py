@@ -9,7 +9,7 @@ class product (osv.osv):
     _columns = {
         'name' : fields.char('Tên sản phẩm', size=250, required=True, translate=True),
         'code' : fields.char('Mã sản phẩm', size=25, required=True, translate=True),
-        'brand_id' : fields.many2one('store_phone.brand', 'Thương hiệu', required=True),
+        'brand_id' : fields.many2one('store_phone.brand', 'Thương hiệu'),
         'price' : fields.float('Giá sản phẩm', required=True),
         'description' : fields.text('Mô tả', translate=True),
         'actived' : fields.boolean('Trạng thái'),

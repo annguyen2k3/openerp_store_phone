@@ -10,6 +10,7 @@
                     <field name="code"/>
                     <field name="name"/>
                     <field name="description"/>
+                    <field name="product_ids" string="Danh sách sản phẩm"/>
                 </tree>
             </field>
         </record>
@@ -24,6 +25,16 @@
                         <field name="code"/>
                         <field name="name"/>
                         <field name="description"/>
+                    </group>
+                    <group string="Danh sách sản phẩm">
+                        <field name="product_ids">
+                            <tree>
+                                <field name="code"/>
+                                <field name="name"/>
+                                <field name="price"/>
+                                <field name="stock"/>
+                            </tree>
+                        </field>
                     </group>
                 </form>
             </field>
@@ -171,7 +182,7 @@
             <field name="name">invoice.form</field>
             <field name="model">store_phone.invoice</field>
             <field name="arch" type="xml">
-                <form string="Hóa đơn">
+                <form string="Hóa đơn" create="1" delete="1" edit="0">
                     <group string="Thông tin khách hàng">
                         <field name="customer_name"/>
                         <field name="customer_address"/>
