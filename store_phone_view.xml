@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- Thương hiệu: Tree view -->
+        <record model="ir.ui.view" id="view_brand_tree">
+            <field name="name">brand.tree</field>
+            <field name="model">store_phone.brand</field>
+            <field name="arch" type="xml">
+                <tree string="Danh sách thương hiệu">
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Thương hiệu: Form view -->
+        <record model="ir.ui.view" id="view_brand_form">
+            <field name="name">brand.form</field>
+            <field name="model">store_phone.brand</field>
+            <field name="arch" type="xml">
+                <form string="Thương hiệu">
+                    <group>
+                        <field name="code"/>
+                        <field name="name"/>
+                        <field name="description"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <!-- Thương hiệu: Action -->
+        <record model="ir.actions.act_window" id="action_brand">
+            <field name="name">Thương hiệu</field>
+            <field name="res_model">store_phone.brand</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_brand_tree">
+            <field name="name">Thương hiệu</field>
+            <field name="res_model">store_phone.brand</field>
+            <field name="view_type">tree</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+        <!-- Sản phẩm: Tree view -->
+        <record model="ir.ui.view" id="view_product_tree">
+            <field name="name">product.tree</field>
+            <field name="model">store_phone.product</field>
+            <field name="arch" type="xml">
+                <tree string="Danh sách sản phẩm">
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="brand_id"/>
+                    <field name="price"/>
+                    <field name="actived"/>
+                    <field name="stock"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Sản phẩm: Form view -->
+        <record model="ir.ui.view" id="view_product_form">
+            <field name="name">product.form</field>
+            <field name="model">store_phone.product</field>
+            <field name="arch" type="xml">
+                <form string="Sản phẩm">
+                    <group>
+                        <group>
+                            <field name="code"/>
+                            <field name="name"/>
+                            <field name="brand_id"/>
+                        </group>
+                        <group>
+                            <field name="price"/>
+                            <field name="description"/>
+                            <field name="actived"/>
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <!-- Sản phẩm: Search view -->
+        <record model="ir.ui.view" id="view_product_search">
+            <field name="name">product.search</field>
+            <field name="model">store_phone.product</field>
+            <field name="arch" type="xml">
+                <search string="Tìm kiếm sản phẩm">
+                    <field name="name" string="Tên sản phẩm"/>
+                    <field name="code" string="Mã sản phẩm"/>
+                    <field name="brand_id" string="Thương hiệu"/>
+                </search>
+            </field>
+        </record>
+
+         <!-- Sản phẩm: Action -->
+        <record model="ir.actions.act_window" id="action_product">
+            <field name="name">Sản phẩm</field>
+            <field name="res_model">store_phone.product</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_product_tree">
+            <field name="name">Sản phẩm</field>
+            <field name="res_model">store_phone.product</field>
+            <field name="view_type">tree</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+         <!-- Nhập hàng: Tree view -->
+        <record model="ir.ui.view" id="view_purchase_tree">
+            <field name="name">purchase.tree</field>
+            <field name="model">store_phone.purchase</field>
+            <field name="arch" type="xml">
+                <tree string="Danh sách nhập hàng">
+                    <field name="product_id"/>
+                    <field name="quantity"/>
+                    <field name="price"/>
+                    <field name="total_amount"/>
+                    <field name="supplier"/>
+                    <field name="date"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Nhập hàng: Form view -->
+        <record model="ir.ui.view" id="view_purchase_form">
+            <field name="name">purchase.form</field>
+            <field name="model">store_phone.purchase</field>
+            <field name="arch" type="xml">
+                <form string="Nhập hàng">
+                    <group>
+                        <field name="product_id"/>
+                        <field name="quantity"/>
+                        <field name="price"/>
+                        <field name="supplier"/>
+                        <field name="date"/>
+                        <field name="note"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <!-- Nhập hàng: Action -->
+        <record model="ir.actions.act_window" id="action_purchase">
+            <field name="name">Nhập hàng</field>
+            <field name="res_model">store_phone.purchase</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Hóa đơn: Tree view -->
+        <record model="ir.ui.view" id="view_invoice_tree">
+            <field name="name">invoice.tree</field>
+            <field name="model">store_phone.invoice</field>
+            <field name="arch" type="xml">
+                <tree string="Danh sách hóa đơn">
+                    <field name="customer_name"/>
+                    <field name="customer_phone"/>
+                    <field name="date"/>
+                    <field name="payment_method"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Hóa đơn: Form view -->
+        <record model="ir.ui.view" id="view_invoice_form">
+            <field name="name">invoice.form</field>
+            <field name="model">store_phone.invoice</field>
+            <field name="arch" type="xml">
+                <form string="Hóa đơn">
+                    <group string="Thông tin khách hàng">
+                        <field name="customer_name"/>
+                        <field name="customer_address"/>
+                        <field name="customer_phone"/>
+                        <field name="date" readonly="1"/>
+                        <field name="payment_method"/>
+                    </group>
+                    <group string="Chi tiết hóa đơn">
+                        <field name="line_ids">
+                            <tree editable="bottom">
+                                <field name="product_id"/>
+                                <field name="quantity"/>
+                                <field name="price"/>
+                                <field name="amount" readonly="1"/>
+                            </tree>
+                        </field>
+                        <group>
+                            <field name="total_amount" readonly="1"/>
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <!-- Hóa đơn: Action -->
+        <record model="ir.actions.act_window" id="action_invoice">
+            <field name="name">Hóa đơn</field>
+            <field name="res_model">store_phone.invoice</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_invoice_tree">
+            <field name="name">Hóa đơn</field>
+            <field name="res_model">store_phone.invoice</field>
+            <field name="view_type">tree</field>
+            <field name="view_mode">tree</field>
+        </record>
+    </data>
+</openerp>

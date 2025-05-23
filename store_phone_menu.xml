@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- Menu cha -->
+        <menuitem id="store_parent" name="Quản Lý Cửa Hàng ĐTDĐ" icon="STOCK_OPEN"/>
+
+        <!-- Sản phẩm Menu -->
+        <menuitem id="menu_product_parent" name="Sản phẩm" parent="store_parent"/>
+        <menuitem action="action_product" id="menu_product_product" parent="menu_product_parent" name="Quản lý sản phẩm"/>
+
+        <!-- Thương hiệu Menu -->
+        <menuitem id="menu_brand_parent" name="Thương hiệu" parent="store_parent"/>
+        <menuitem action="action_brand" id="menu_brand_brand" parent="menu_brand_parent" name="Quản lý thương hiệu"/>
+
+        <!-- Nhập hàng Menu -->
+        <menuitem id="menu_purchase_parent" name="Nhập hàng" parent="store_parent"/>
+        <menuitem action="action_purchase" id="menu_purchase_purchase" parent="menu_purchase_parent" name="Lịch sử nhập hàng"/>
+
+        <!-- Hoá đơn Menu -->
+        <menuitem id="menu_invoice_parent" name="Hoá đơn" parent="store_parent"/>
+        <menuitem action="action_invoice" id="menu_invoice" parent="menu_invoice_parent"/>
+    </data>
+</openerp>
